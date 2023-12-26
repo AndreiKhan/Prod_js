@@ -65,6 +65,7 @@ const orders = []
 class Manager {
   newOrder(client, ...order) {
 
+    // Проверяем заказ
     for (const el of order) {
 
       if(!dishes.includes(el.name)) {
@@ -72,7 +73,7 @@ class Manager {
       }
     }
 
-
+    // Если все прошло добавляем его в заказы и выводим в консоль
     orders.push({
       client,
       order,
@@ -80,7 +81,6 @@ class Manager {
 
 
     for (const el of order) {
-      
       for (const cook of cooks) {
 
         if(cook.spec == el.type) {
