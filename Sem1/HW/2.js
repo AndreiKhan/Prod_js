@@ -36,15 +36,15 @@ class Client {
 const cooks = [
   {
     name: "Олег",
-    spec: "Пицца"
+    spec: "Пицца",
   },
   {
     name: "Андрей",
-    spec: "Суши"
+    spec: "Суши",
   },
   {
     name: "Анна",
-    spec: "Десерт"
+    spec: "Десерт",
   },
 ]
 
@@ -56,7 +56,7 @@ const dishes = ["Маргарита",
                 "Чизмаки", 
                 "Сеякемаки", 
                 "Тирамису", 
-                "Чизкейк"
+                "Чизкейк",
 ]
 
 const orders = []
@@ -65,12 +65,9 @@ const orders = []
 class Manager {
   newOrder(client, ...order) {
 
-    let exist = true
     for (const el of order) {
+
       if(!dishes.includes(el.name)) {
-
-        exist = false
-
         throw `${el.type} "${el.name}" - такого блюда не существует.` 
       }
     }
@@ -78,14 +75,14 @@ class Manager {
 
     orders.push({
       client,
-      order
+      order,
     })
 
 
     for (const el of order) {
       
       for (const cook of cooks) {
-        
+
         if(cook.spec == el.type) {
           console.log(`${el.type} "${el.name}" - ${el.quantity}; готовит повар ${cook.name}`);
         }
