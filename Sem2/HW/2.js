@@ -64,6 +64,7 @@ const initialData = [
 
 const products = document.getElementById("productsBox")
 
+// создадим блоки товаров
 initialData.forEach((product) => {
   products.insertAdjacentHTML(
     'beforeend',
@@ -81,6 +82,7 @@ initialData.forEach((product) => {
   );
 });
 
+// добавим отзывы товаров
 initialData.forEach((product) => {
   let comments = document.getElementById(`${product.product}`);
 
@@ -96,8 +98,10 @@ initialData.forEach((product) => {
   });
 });
 
+// Выберем все кнопки
 const buttons = document.querySelectorAll('button');
 
+// Зададим им свойства
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     console.log(`Добавлен новый отзыв для товара ${button.className}`);
@@ -106,12 +110,12 @@ buttons.forEach((button) => {
     const reviewError = document.getElementById(`error__${button.className}`)
     const review = document.getElementById(`${button.className}`)
 
-    console.log(reviewInput.value.length);
-
+    // Проверим соответствует ли условиям новый отзыв
     if(reviewInput.value.length < 50 || reviewInput.value.length > 500) {
       reviewError.innerHTML = "Недопустимый отзыв";
 
     }else {
+      // добавим его в отзывы
       review.insertAdjacentHTML(
         'beforeend',
         `
