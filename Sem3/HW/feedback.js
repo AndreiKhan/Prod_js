@@ -15,17 +15,14 @@ button.addEventListener('click', () => {
     }else {
         // Создаем если необходимо
         if (!localStorage.getItem(storageKey)) {
-            console.log("dobavil file");
             localStorage.setItem(
                 storageKey,
                 JSON.stringify([{product: productInput.value, feedback: []}])
             );
-            console.log("dobavil file");
         }
 
         // Парсим
         const db = JSON.parse(localStorage.getItem(storageKey));
-        console.log(db);
         let exist = true
 
         // Если товар существует то добавляем отзыв к нему
@@ -43,7 +40,7 @@ button.addEventListener('click', () => {
         
         // Сохраняем изменения
         localStorage.setItem(storageKey, JSON.stringify(db));
-        
+
         feedbackInput.value = "";
     }
 });
