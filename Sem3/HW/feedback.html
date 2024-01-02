@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #productsBox {
+            display: grid;
+            align-items: start;
+            gap: 70px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        .feedback__field__feedbackError {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="feedback">
+        <a class="link" href="product.html">Перейти к товарам</a>
+        <div class="feedback__field">
+            <h1 class="feedback__field__title">
+                Напишите отзыв
+            </h1>
+
+            <input class="feedback__field__inputForProduct" id="productInput" type="text"><br>
+            <input class="feedback__field__inputForFeedback" id="feedbackInput" type="text"><br>
+
+            <p class="feedback__field__feedbackError" id="feedbackError"></p>
+            <button class="feedback__field__saveFeedback" id="saveScript">Добавить отзыв</button>
+        </div>
+    </div>
+
+
+    <script src="feedback.js"></script>
+</body>
+</html>
