@@ -21,7 +21,6 @@ button.addEventListener('click', () => {
             );
         }
 
-        // Парсим
         const db = JSON.parse(localStorage.getItem(storageKey));
         let exist = true
 
