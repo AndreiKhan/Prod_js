@@ -41,5 +41,6 @@ button.addEventListener('click', () => {
         localStorage.setItem(storageKey, JSON.stringify(db));
 
         feedbackInput.value = "";
+        feedbackError.innerHTML = "";
     }
 });
